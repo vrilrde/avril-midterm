@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/styles/activity.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="/scripts/grained.js" defer></script>
+    <script src="/scripts/activity.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <title>Dashboard | Avril</title>
+  </head>
+
+  <body>
+    <div id="grained"></div>
+    <div id="sidebar">
+      <ul>
+        <li><a href="/pages/home.html">Home </a></li>
+        <li><a href="/pages/about_me.html">About Me</a></li>
+        <li><a href="/pages/gallery.html">Gallery</a></li>
+        <li><a href="/pages/activity.html">Activity</a></li>
+        <div class="theme-switch-wrapper">
+          <i class="fas fa-moon"></i>
+          <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle" />
+            <div class="slider round"></div>
+          </label>
+          <i class="fas fa-sun"></i>
+        </div>
+      </ul>
+    </div>
+    <h2 class="page-title">Activity</h2>
+
+    <section class="calculator-ctn">
+      <div class="calculator">
+        <div class="display-container">
+          <input type="text" class="history" readonly />
+          <input type="text" class="display" readonly placeholder="0" />
+        </div>
+        <div class="buttons">
+          <button data-value="7">7</button>
+          <button data-value="8">8</button>
+          <button data-value="9">9</button>
+          <button class="operation" data-value="÷">
+            <i class="fas fa-divide"></i>
+          </button>
+          <button data-value="4">4</button>
+          <button data-value="5">5</button>
+          <button data-value="6">6</button>
+          <button class="operation" data-value="×">
+            <i class="fas fa-times"></i>
+          </button>
+          <button data-value="1">1</button>
+          <button data-value="2">2</button>
+          <button data-value="3">3</button>
+          <button class="operation" data-value="-">
+            <i class="fas fa-minus"></i>
+          </button>
+          <button data-value="0">0</button>
+          <button data-value=".">.</button>
+          <button data-value="Backspace">
+            <i class="fas fa-backspace"></i>
+          </button>
+          <button class="operation" data-value="+">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <button class="equal" data-value="=">
+          <i class="fas fa-equals"></i>
+        </button>
+      </div>
+    </section>
+  </body>
+</html>

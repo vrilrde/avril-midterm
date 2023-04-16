@@ -1,0 +1,271 @@
+:root {
+  --background-light: #f0f0f0;
+  --background-dark: #1f1f1f;
+  --calculator-light: #ffffff;
+  --calculator-dark: #2b2b2b;
+  --button-light: #e1e1e1;
+  --button-dark: #3a3a3a;
+  --button-hover-light: #d0d0d0;
+  --button-hover-dark: #4a4a4a;
+  --equal-light: #4caf50;
+  --equal-dark: #45a049;
+  --text-light: #000;
+  --text-dark: #f0f0f0;
+  --border-light: #ccc;
+  --border-dark: #4a4a4a;
+  --history-light: #888;
+  --history-dark: #ccc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  /* display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--background-light);
+    font-family: Arial, sans-serif; */
+  transition: background-color 0.5s ease;
+}
+
+/* Add styles for the light/dark mode icons */
+.theme-switch-wrapper {
+  /* position: absolute;
+  top: 20px;
+  bottom: 30px;
+  right: 20px; */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.fa-moon,
+.fa-sun {
+  color: var(--history-light);
+  transition: color 0.5s ease;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 24px;
+  position: relative;
+  width: 48px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 16px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 16px;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.calculator {
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background-color: var(--calculator-light);
+  padding: 0.625em;
+  width: 320px;
+  /* Add a smooth shadow */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0);
+  transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.calculator-ctn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.display-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 10px;
+  /* border: 1px solid var(--border-light); */
+  border-radius: 5px;
+  transition: border-color 0.5s ease;
+  padding: 1rem 0;
+}
+
+.history,
+.display {
+  /* padding: 5px; */
+  font-size: 18px;
+  text-align: right;
+  background-color: transparent;
+  color: var(--text-light);
+  border: none;
+  transition: background-color 0.5s ease, color 0.5s ease,
+    border-color 0.5s ease;
+}
+
+/* Remove Styling when Selected */
+.history:focus,
+.display:focus {
+  outline: none;
+}
+
+.history {
+  font-size: 16px;
+  color: var(--history-light);
+  transition: color 0.5s ease;
+  border-top: none;
+}
+
+.display {
+  font-size: 32px;
+  color: var(--text-light);
+  transition: color 0.5s ease;
+  border-top: none;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.375rem;
+  margin-bottom: 10px;
+}
+
+button {
+  border: 1px solid var(--border-light);
+  background-color: var(--button-light);
+  padding: 10px;
+  font-size: 18px;
+  color: var(--text-light);
+  border-radius: 0.1875rem;
+  height: 3.125rem;
+  transition: background-color 0.5s ease, color 0.5s ease,
+    border-color 0.5s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover-light);
+}
+
+button:focus {
+  outline: none;
+}
+
+.equal {
+  grid-column: span 4;
+  background-color: var(--button-light);
+  color: var(--text-light);
+  border-radius: 5px;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  width: 24%;
+  height: 3.125rem;
+  margin-top: 0.3px;
+}
+
+.equal:hover {
+  background-color: var(--button-hover-light);
+}
+
+[data-theme="dark"] body {
+  background-color: var(--background-dark);
+}
+
+[data-theme="dark"] .calculator {
+  background-color: var(--calculator-dark);
+  border-color: var(--border-dark);
+}
+
+[data-theme="dark"] .history,
+[data-theme="dark"] .display {
+  border-top-color: var(--border-dark);
+}
+
+[data-theme="dark"] .history {
+  color: var(--history-dark);
+}
+[data-theme="dark"] .display {
+  color: var(--text-dark);
+}
+
+[data-theme="dark"] button {
+  background-color: var(--button-dark);
+  color: var(--text-dark);
+  border-color: var(--border-dark);
+}
+
+[data-theme="dark"] button:hover {
+  background-color: var(--button-hover-dark);
+}
+
+[data-theme="dark"] .equal {
+  background-color: var(--button-dark);
+
+  color: var(--text-dark);
+}
+
+/* Add dark mode styles for the light/dark mode icons */
+[data-theme="dark"] .fa-moon,
+[data-theme="dark"] .fa-sun {
+  color: var(--history-dark);
+}
+
+[data-theme="dark"] .display-container {
+  border-color: var(--border-dark);
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: top;
+  z-index: 1;
+  top: 100px;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+[data-theme="dark"] .page-title {
+  color: var(--text-dark);
+}
+
+.page-title {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+#grained {
+    /* Fill the whole screen */
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    z-index: 100;
+    pointer-events: none;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 16px;
+    overflow: hidden;
+    background-color: #1d1d1d;
+    border-radius: 0 0 1.25rem 1.25rem;
+
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: .625rem 1.25rem;
+    text-decoration: none;
+    border: 1px solid #1d1d1d;
+    transition: all 0.3s ease-in-out;
+    border-radius: 1.25rem;
+
+
+
+}
+
+li a:hover {
+    border-radius: 1.25rem;
+    border: 1px solid #666666;
+    background-color: #252525;
+}
+
+h1,
+h2 {
+    color: #333;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.gal-imgs-ctn {
+    /* Add a relative position so that the image can be positioned absolutely */
+    position: relative;
+    /* Make it responsive */
+    width: 100%;
+    max-width: 300px;
+    /* Set height equal to width to maintain a 1:1 aspect ratio */
+    height: 0;
+    padding-bottom: 100%;
+}
+
+.gal-imgs-ctn img {
+    /* Position the image absolutely within its parent element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Make it responsive */
+    width: 100%;
+    height: 100%;
+    max-height: 300px;
+    object-fit: cover;
+
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+/* ---- */
+
+.hero-section {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border: 1px solid #1d1d1d;
+    margin: 1rem;
+    border-radius: 16px;
+    padding-right: 2rem;
+    gap: 2rem;
+}
+
+.hero-section img {
+    padding: 0;
+    margin: 0;
+}
+
+.hero-section h1 {
+    width: 100%;
+}
+
+.hero-section p {
+    width: 100%;
+}
+
+
+.body {
+    background-color: #000000;
+    background-image: -moz-linear-gradient(45deg, #000000 25%, transparent 25%, transparent 75%, #000000 75%, #000000),
+        -moz-linear-gradient(45deg, #000000 25%, transparent 25%, transparent 75%, #000000 75%, #000000);
+}
+
+p {
+    text-align: justify;
+}
+
+.hero-section-content-ctn {
+    width: 100%;
+}
